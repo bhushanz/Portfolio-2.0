@@ -656,9 +656,7 @@ align-items: center;
  
 
  @media (max-width: 460px) {
-    .loader{
-        border:2px solid red;
-    }
+
 
     .loader h1{
         font-size:14vw;
