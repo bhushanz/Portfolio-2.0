@@ -34,7 +34,7 @@ html,body{
 }
 .loader .Lfooter{
     position: absolute;
-    bottom: 3vw;
+    bottom: 2vw;
 }
 .loader p{
     text-transform: uppercase;
@@ -656,10 +656,16 @@ align-items: center;
  
 
  @media (max-width: 460px) {
-
+    .loader{
+        border:2px solid red;
+    }
 
     .loader h1{
-        font-size:10vw;
+        font-size:14vw;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%,-50%);
     }
 
     .loader .Lfooter{

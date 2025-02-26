@@ -1,6 +1,11 @@
+ 
+ let mR = gsap.matchMedia();
+
+ // ✅ Desktop Animation (Runs Only on Screens 768px and Above)
+ mR.add("(min-width: 768px)", () => {
  var tl=gsap.timeline()
  tl.to(".welcome",{
-    fontSize:"28vw",
+    fontSize:"18vw",
    duration:2.5,
 ease: "bounce.out",
  });
@@ -48,6 +53,60 @@ ease: "bounce.out",
 
  });
 
+});
+
+
+mm.add("(max-width: 480px)", () => {
+  var tl=gsap.timeline()
+ tl.to(".welcome",{
+    fontSize:"40vw",
+   duration:2.5,
+ease: "bounce.out",
+ });
+ tl.to(" .loader p",{
+   opacity:1,
+   y:-110,
+    duration:1,
+   ease: "power2.out"
+})
+ tl.to(".loader h1",{
+    opacity:0,
+    duration:2,
+     ease: "power2.out"
+ });
+
+ tl.to(" .loader p",{
+   opacity:0,
+    duration:2,
+   ease: "power2.out"
+});
+ tl.to(".loader",{
+    height:0,
+    display: "none",
+    duration:1,
+    ease: "power2.out"
+ 
+ });
+ tl.from("nav",{
+   y:-90,
+   duration:1
+ })
+ tl.from('.container p',{
+   opacity:0,
+   duration:1,
+ });
+ tl.to(".container h1",{
+  scale:1,
+   opacity:1,
+   ease: "power1.out",
+   duration:1
+ });
+ tl.from('.container .paraline',{
+   opacity:0,
+   duration:.5
+
+ });
+});
 
 
 

@@ -77,6 +77,48 @@ function infiLoader(){
       })
     }
   });
+
+
+  let touchStartY = 0; // Stores touch start position
+
+  // ✅ Desktop Scroll (Mouse Wheel)
+  window.addEventListener("wheel", function (event) {
+    if (event.deltaY > 0) {
+      hideNav();
+    } else {
+      showNav();
+    }
+  });
+
+  // ✅ Mobile Scroll (Touch Gestures)
+  window.addEventListener("touchstart", function (event) {
+    touchStartY = event.touches[0].clientY; // Get initial touch position
+  });
+
+  window.addEventListener("touchmove", function (event) {
+    let touchEndY = event.touches[0].clientY; // Get touch position when moving
+
+    if (touchStartY > touchEndY + 20) { // Scroll Down
+      hideNav();
+    } else if (touchStartY < touchEndY - 20) { // Scroll Up
+      showNav();
+    }
+  });
+
+  function hideNav() {
+    gsap.to('nav', { y: "-100%", duration: .3, ease: "none", overwrite: true });
+    gsap.to(".movein", { x: "-200%", duration: 4, ease: "none", overwrite: true });
+    gsap.to(".movein img", { rotate: 180 });
+  }
+
+  function showNav() {
+    gsap.to("nav", { y: "0%", duration: .3, ease: "none", overwrite: true });
+    gsap.to(".movein", { x: "0%", duration: 5, ease: "none", overwrite: true });
+    gsap.to(".movein img", { rotate: 0 });
+  }
+
+
+
 }
 locomotion();
 infiLoader();
