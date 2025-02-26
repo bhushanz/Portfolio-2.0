@@ -84,6 +84,34 @@ infiLoader();
 
 
 
+let menubtn= document.querySelector('.menu');
+let sidebar = document.querySelector('.side-list');
+let closebtn = document.querySelector(".side-close");
+menubtn.addEventListener("click",()=>{
+    
+  gsap.to(" .side-list",{
+      height: "45vh",
+       duration: 1
+     })
+     gsap.to(".side-close",{
+      rotate:360,
+      duration:1
+     })
+  
+});
+
+closebtn.addEventListener("click",()=>{
+  gsap.to(".side-list",{
+   height: 0,
+    duration: 1
+  })
+  gsap.to(".side-close",{
+      rotate:-360,
+      duration:1
+     })
+
+});
+
 
 
 
@@ -132,7 +160,7 @@ gsap.to(frame,{
 
 var tl=gsap.timeline({
   scrollTrigger: {
-    trigger: "#page2",
+    trigger: "#about",
     scroller: "#main",
     start: "top top",
     end: "bottom 30%",
@@ -177,7 +205,7 @@ tl.to(".about .top", {
 // tl.to(".about .top", {
 //   top:"-50%",
 //   scrollTrigger: {
-//     trigger: "#page2",
+//     trigger: "#about",
 //     scroller: "body",
 //     start: "top top",
 //     end: "bottom center",
@@ -188,7 +216,7 @@ tl.to(".about .top", {
 // tl.to(".about .bottom", {
 //   bottom:"-50%",
 //   scrollTrigger: {
-//     trigger: "#page2",
+//     trigger: "#about",
 //     scroller: "body",
 //     start: "top top",
 //     end: "bottom center",
@@ -232,11 +260,12 @@ tl.to(".about .top", {
    });
  });
  
-
+ let mm = gsap.matchMedia();
  //project animation
+ mm.add("(min-width: 768px)", () => {
  var crd = gsap.timeline({
   scrollTrigger: {
-      trigger: "#page3",
+      trigger: "#project",
       scroller: "#main",
       start: "top top",
       end: "bottom bottom",
@@ -252,55 +281,59 @@ crd.to(".page3head h1", {
   duration: 4  
 },'a')
 
-.to("#page3 #card1", {
+.to("#project #card1", {
   top: "35%",
   ease: "power2.out",
   duration: 4  
 },'a')
 
-.to("#page3 #card2", {
+.to("#project #card2", {
   top: "100%",  // 🔹 Adjusted to prevent jumping
   ease: "power2.out",
   duration: 4  
 },'a')
 
-.to("#page3 #card2", {
+.to("#project #card2", {
   top: "38%",
   ease: "power2.out",
   duration: 4  
 },'b')
 
-.to("#page3 #card1", {
+.to("#project #card1", {
   width: "75%",
   height: "65vh",
   ease: "power2.out",
   duration: 4
 },'b')
 
-.to("#page3 #card3", {
+.to("#project #card3", {
   top: "180%",  // 🔹 Adjusted to prevent jumping
   ease: "power2.out",
   duration: 4  
 },'b')
 
-.to("#page3 #card3", {
+.to("#project #card3", {
   top: "41%",
   ease: "power2.out",
   duration: 4  
 },'c')
 
-.to("#page3 #card2", {
+.to("#project #card2", {
   width: "75%",
   height: "65vh",
   ease: "power2.out",
   duration: 4  
 },'c')
 
-.to("#page3 #card3", {
+.to("#project #card3", {
   width: "75%",
   height: "65vh",
   ease: "power2.out",
   duration: 4  
+});
+});
+mm.add("(max-width: 767px)", () => {
+  console.log("GSAP animation is disabled on mobile.");
 });
 
 
@@ -335,5 +368,5 @@ soundPlay();
 
 
 
-
+// ✅ Mobile Animation
 

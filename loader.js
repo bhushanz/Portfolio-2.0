@@ -1,12 +1,12 @@
  var tl=gsap.timeline()
  tl.to(".welcome",{
-    fontSize:"18vw",
+    fontSize:"28vw",
    duration:2.5,
 ease: "bounce.out",
  });
  tl.to(" .loader p",{
    opacity:1,
-   y:-90,
+   y:-110,
     duration:1,
    ease: "power2.out"
 })
