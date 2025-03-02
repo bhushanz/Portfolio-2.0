@@ -15,6 +15,9 @@ html,body{
     color: #1D1D1D;
     
 }
+title{
+    font-family: Founder;
+}
 .side-list{
     display: none;
 }
@@ -375,16 +378,20 @@ flex:1;
  filter: drop-shadow(0px 5px 10px  rgb(169, 110, 187));
 }
 
-
-
 .skills{
     width: 100%;
-    height: 90vh;
+    height: 100vh;
     padding: 5vh 5vw;
     position: relative;
 }
+.skills p{
+    text-transform: uppercase;
+    font-size: .9vw;
+    padding-left: 13%;
+    font-weight: bold;
+}
 .skills .hdng{
-height:8vh;
+height:7.5vh;
 overflow: hidden;
 
 }
@@ -394,6 +401,9 @@ overflow: hidden;
     font-weight: 900;
     -webkit-text-stroke: .2px rgb(0, 0, 0);
    
+}
+.inner {
+position: relative;
 }
 
 .imgbox{
@@ -509,14 +519,25 @@ align-items: center;
     z-index: 3;
   }
   .cards .cardtext{
-  width: 100%;
-    border-radius:10px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    /* background-color:rgba(219, 219, 219, 0.06);  */
-    padding: .8vw 5vw;
+    top: 0;
+    padding: 0;
+    margin: 0;
+    height: 0vh;
+    width: 100%;
+    z-index: 1;
+    position:absolute;
+     background-color: rgba(0, 0, 0, 0.552);
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     padding-top: 15%;
     color: rgb(255, 255, 255);
+    opacity: 0;
+  }
+  .inner:hover .cardtext{
+    height: 100vh;
+  opacity: 1;
+    transition:all 1s linear;
   }
   .cardtext h1{
     text-transform: uppercase;
@@ -532,9 +553,11 @@ align-items: center;
     -webkit-text-stroke: .1px rgb(249, 249, 249);
   }
   .inimg{
-    width: 85%;
-    height: 85%;
+    width: 100%;
+    height: 100%;
     border-radius:10px;
+    padding: 0;
+    margin: 0;
   }
   #inimg1{
     background-image: url('img/obeysagency.jpg');
@@ -656,9 +679,7 @@ align-items: center;
  
 
  @media (max-width: 460px) {
-    .loader{
-        border:2px solid red;
-    }
+    
 
     .loader h1{
         font-size:14vw;

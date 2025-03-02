@@ -321,51 +321,51 @@ crd.to(".page3head h1", {
   fontSize: "10vw",
   ease: "power2.out",
   duration: 4  
-},'a')
+})
 
 .to("#project #card1", {
   top: "35%",
   ease: "power2.out",
   duration: 4  
-},'a')
+})
 
 .to("#project #card2", {
   top: "100%",  // 🔹 Adjusted to prevent jumping
   ease: "power2.out",
   duration: 4  
-},'a')
+})
 
 .to("#project #card2", {
   top: "38%",
   ease: "power2.out",
   duration: 4  
-},'b')
+})
 
 .to("#project #card1", {
   width: "75%",
   height: "65vh",
   ease: "power2.out",
   duration: 4
-},'b')
+})
 
 .to("#project #card3", {
   top: "180%",  // 🔹 Adjusted to prevent jumping
   ease: "power2.out",
   duration: 4  
-},'b')
+})
 
 .to("#project #card3", {
   top: "41%",
   ease: "power2.out",
   duration: 4  
-},'c')
+})
 
 .to("#project #card2", {
   width: "75%",
   height: "65vh",
   ease: "power2.out",
   duration: 4  
-},'c')
+})
 
 .to("#project #card3", {
   width: "75%",
